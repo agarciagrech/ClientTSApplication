@@ -5,6 +5,8 @@
  */
 package clienttelesomniaapp;
 
+import java.io.File;
+import java.net.URL;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -20,13 +23,15 @@ import javafx.stage.Stage;
  * @author agarc
  */
 public class ClientTelesomniaApp extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("pantallainicial.fxml"));
-        
+        URL url = new File("src/clienttelesomniaapp/inicio.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+       //Parent root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -37,5 +42,5 @@ public class ClientTelesomniaApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

@@ -33,7 +33,7 @@ public class PantallaInicialController {
     @FXML
     void patientConnection(ActionEvent event) {
         try{
-	  Parent root = FXMLLoader.load(getClass().getResource("patientAcces.fxml")); 
+	  Parent root = FXMLLoader.load(getClass().getResource("patientAccess.fxml")); 
 	  Scene scene = new Scene(root);
 	  Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 	  		
