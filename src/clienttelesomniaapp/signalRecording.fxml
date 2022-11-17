@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="clienttelesomniaapp.SignalRecordingController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="5.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="213.0" layoutY="36.0" prefHeight="22.0" prefWidth="192.0" text="SIGNAL RECORDING">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="100.0" text="Introduce the name of the recording" />
+            <TextField fx:id="signalName" layoutX="86.0" layoutY="139.0" prefHeight="25.0" prefWidth="451.0" promptText="Signal name" />
+            <Button fx:id="recordSignalsButton" layoutX="425.0" layoutY="175.0" mnemonicParsing="false" onAction="#recordSignals" prefHeight="25.0" prefWidth="112.0" text="Record Signals" />
+            <Button fx:id="exitButton" layoutX="86.0" layoutY="175.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="25.0" prefWidth="91.0" text="Exit" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
