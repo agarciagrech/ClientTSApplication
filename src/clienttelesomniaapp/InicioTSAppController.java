@@ -5,17 +5,24 @@
  */
 package clienttelesomniaapp;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+
 /**
  *
  * @author agarc
  */
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-
-public class PatientAccessController {
+public class InicioTSAppController {
+    @FXML
+    private Button logInButton;
 
     @FXML
-    private Button loginPatient;
+    void logIn(ActionEvent event) {
 
+    }
+    
+
+    
 }
-
