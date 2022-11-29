@@ -6,6 +6,8 @@
 package clienttelesomniaapp;
 
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -26,17 +28,11 @@ import javafx.stage.Stage;
 public class ClientTelesomniaApp extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws MalformedURLException, IOException {
 
         URL url = new File("src/clienttelesomniaapp/inicioTSApp.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
        //Parent root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
-
-
-        
-        
-        
-
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
@@ -45,18 +41,6 @@ public class ClientTelesomniaApp extends Application {
      
     }
     
-    @FXML
-    private void logIn(ActionEvent event){
-        URL url = new File("src/clienttelesomniaapp/doctorRegister.fxml").toURI().toURL();
-        Parent root = FXMLLoader.load(url);
-       //Parent root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
-
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
-    }
     /**
      * @param args the command line arguments
      */

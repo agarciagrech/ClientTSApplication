@@ -6,8 +6,11 @@
 package pojos;
 
 import java.io.Serializable;
+import java.rmi.NotBoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -34,7 +37,7 @@ public class Patient implements Serializable{
     }
 
     
-    public Patient(Integer medical_card_number, String name, String surname, Date dob, String address, String email, String diagnosis, String allergies, String gender, Integer userId, String macAddress) {
+    public Patient(String name, String surname, Integer medical_card_number, Date dob, String address, String email, String diagnosis, String allergies, String gender, Integer userId, String macAddress) {
         this.medical_card_number = medical_card_number;
         this.name = name;
         this.surname = surname;
@@ -47,6 +50,20 @@ public class Patient implements Serializable{
         this.userId = userId;
         this.macAddress = macAddress;
     }
+    
+    public Patient(Integer medical_card_number, String name, String surname, Date dob, String address, String email, String diagnosis, String allergies, String gender, String macAddress) {
+        this.medical_card_number = medical_card_number;
+        this.name = name;
+        this.surname = surname;
+        this.dob = dob;
+        this.address = address;
+        this.email = email;
+        this.diagnosis = diagnosis;
+        this.allergies = allergies;
+        this.gender = gender;
+        this.macAddress = macAddress;
+    }
+
 
     public Integer getMedical_card_number() {
         return medical_card_number;
@@ -92,8 +109,14 @@ public class Patient implements Serializable{
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws NotBoundException {
+        Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
+        Matcher mather = pattern.matcher(email);
+        if (mather.find() == true) {
+            this.email = email;
+        } else {
+            throw new NotBoundException("Not valid email");
+        }
     }
 
     public String getDiagnosis() {
@@ -116,8 +139,10 @@ public class Patient implements Serializable{
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGender(String gender) throws NotBoundException {
+        
+            this.gender = gender;
+        
     }
 
     public Integer getUserId() {
@@ -143,7 +168,7 @@ public class Patient implements Serializable{
 
     @Override
     public String toString() {
-        return "Patient{" + "medical_card_number=" + medical_card_number + ", name=" + name + ", surname=" + surname + ", dob=" + formatDate(dob) + ", address=" + address + ", email=" + email + ", diagnosis=" + diagnosis + ", allergies=" + allergies + ", gender=" + gender + ", userId=" + userId + ", macAddress=" + macAddress + '}';
+        return "Patient{" + "medical_card_number=" + medical_card_number + ", name=" + name + ", surname=" + surname + ", dob=" + formatDate(dob) + ", address=" + address + ", email=" + email + ", diagnosis=" + diagnosis + ", allergies=" + allergies + ", gender=" + gender + ", macAddress=" + macAddress + '}';
     }
     
     

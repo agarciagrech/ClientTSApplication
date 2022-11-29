@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clienttelesomniaapp.PatientOptions">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="3.0" layoutY="3.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="RecordButton" layoutX="224.0" layoutY="88.0" mnemonicParsing="false" onAction="#editPatient" prefHeight="26.0" prefWidth="150.0" text="Record Signal" />
+            <Button fx:id="exitButton" layoutX="32.0" layoutY="344.0" mnemonicParsing="false" onAction="#exitApp" prefHeight="25.0" prefWidth="58.0" text="Exit " />
+            <Label layoutX="78.0" layoutY="29.0" prefHeight="18.0" prefWidth="162.0" text="Select an option:">
+               <font>
+                  <Font size="21.0" />
+               </font></Label>
+            <Button fx:id="showSignals" layoutX="224.0" layoutY="131.0" mnemonicParsing="false" onAction="#showPatientSignals" prefHeight="26.0" prefWidth="150.0" text="Show Signals" />
+            <Button fx:id="updateInfoButton" layoutX="225.0" layoutY="173.0" mnemonicParsing="false" onAction="#showPatientSignals" prefHeight="26.0" prefWidth="149.0" text="Update information" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
